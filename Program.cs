@@ -12,6 +12,8 @@ for (var counter = 1; counter < 101; counter++)
         }
     }
 
+    CheckDivisor(counter, 11, "Bong", ref output);
+
     if (output == "")
     {
         CheckDivisor(counter, 3, "Fizz", ref output);
