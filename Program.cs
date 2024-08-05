@@ -1,6 +1,29 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿Console.WriteLine("How many numbers do you want to print?");
+string? userNumber = Console.ReadLine();
 
-for (var counter = 1; counter < 2432; counter++)
+int maxNumber = 0;
+
+try
+{
+    maxNumber = Convert.ToInt32(userNumber);
+    if (maxNumber < Int32.MaxValue)
+    {
+        Console.WriteLine($"You want to print {maxNumber} numbers.");
+    }
+    else{
+        Console.WriteLine("This number is too big.");
+    }
+}
+catch (FormatException)
+{
+    Console.WriteLine("Please enter a number only.");
+}
+catch (OverflowException)
+{
+    Console.WriteLine("This number is too big.");
+}
+
+for (var counter = 1; counter < maxNumber; counter++)
 {
     string output = "";
 
@@ -13,10 +36,10 @@ for (var counter = 1; counter < 2432; counter++)
     {
         for (int i = 0; i < divisor.Length; i++)
         {
-             if (IsDivisor(counter, divisor[i]))
-        {
-            refArgument += word[i];
-        }
+            if (IsDivisor(counter, divisor[i]))
+            {
+                refArgument += word[i];
+            }
         }
     }
 
