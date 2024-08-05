@@ -18,15 +18,13 @@ for (var counter = 1; counter < 201; counter++)
             refArgument += word[i];
         }
         }
-       
     }
 
     if (IsDivisor(counter, 11))
     {
         UpdateOutput(counter, [13, 11], ["Fezz", "Bong"], ref output);
     }
-
-    if (output == "")
+    else
     {
         UpdateOutput(counter, [3, 13, 5, 7], ["Fizz", "Fezz", "Buzz", "Bang"], ref output);
     } 
