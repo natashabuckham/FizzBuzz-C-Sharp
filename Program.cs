@@ -1,20 +1,30 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
 for (var counter = 1; counter < 101; counter++)
 {
-    if (counter % 3 == 0 && counter % 5 == 0)
+    string output = "";
+
+    static void CheckDivisor(int counter, int divisor, string word, ref string refArgument)
     {
-        Console.WriteLine("FizzBuzz");
+        if (counter % divisor == 0)
+        {
+            refArgument += word;
+        }
     }
-    else if (counter % 3 == 0)
+
+    if (output == "")
     {
-        Console.WriteLine("Fizz");
+        CheckDivisor(counter, 3, "Fizz", ref output);
+        CheckDivisor(counter, 5, "Buzz", ref output);
+        CheckDivisor(counter, 7, "Bang", ref output);
     } 
-    else if (counter % 5 == 0)
+
+    if (output == "")
     {
-        Console.WriteLine("Buzz");
+        Console.WriteLine(counter);
     }
     else
     {
-        Console.WriteLine(counter);
+        Console.WriteLine(output);
     }
 }
