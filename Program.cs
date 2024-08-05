@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-for (var counter = 1; counter < 201; counter++)
+for (var counter = 1; counter < 2432; counter++)
 {
     string output = "";
 
@@ -22,11 +22,25 @@ for (var counter = 1; counter < 201; counter++)
 
     if (IsDivisor(counter, 11))
     {
-        UpdateOutput(counter, [13, 11], ["Fezz", "Bong"], ref output);
+        if (IsDivisor(counter, 17))
+        {
+            UpdateOutput(counter, [11, 13], ["Bong", "Fezz"], ref output);
+        }
+        else 
+        {
+            UpdateOutput(counter, [13, 11], ["Fezz", "Bong"], ref output);
+        }
     }
     else
     {
-        UpdateOutput(counter, [3, 13, 5, 7], ["Fizz", "Fezz", "Buzz", "Bang"], ref output);
+        if (IsDivisor(counter, 17))
+        {
+            UpdateOutput(counter, [7, 5, 13, 3], ["Bang", "Buzz", "Fezz", "Fizz"], ref output);
+        }
+        else
+        {
+            UpdateOutput(counter, [3, 13, 5, 7], ["Fizz", "Fezz", "Buzz", "Bang"], ref output);
+        }
     } 
 
     if (output == "")
